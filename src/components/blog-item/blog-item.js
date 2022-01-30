@@ -1,22 +1,25 @@
 import blogPhoto from "../images/header/logo.png";
+import "./blog-item.css";
 
-const BlogItem = () => {
+const BlogItem = (props) => {
+  const { firstName, lastName, header, age } = props;
   return (
     <>
-      <div className="BlogItem">
+      <div className="blog-item">
         <div className="blog-img">
           <img alt="photo-blog" src={blogPhoto} />
         </div>
         <div>
           <div>
-            <span>{`${firstName} ${lastName}`}</span>
+            <span>{`${firstName} ${lastName}, ${age} лет :`}</span>
           </div>
           <div>
-            <h3>Заголовок</h3>
-            <p>Моя история....</p>
+            <h3>{header}</h3>
           </div>
         </div>
       </div>
     </>
   );
 };
+
+export default BlogItem;

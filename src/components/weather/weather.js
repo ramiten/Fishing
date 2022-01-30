@@ -34,19 +34,19 @@ const Weather = () => {
   };
 
   const options = cities.map((item, index) => (
-    <option
-      className=""
-      key={index}
-      value={Object.values(item)}
-      selected={+Object.values(item) === 524894}
-    >
+    <option key={index} value={Object.values(item)}>
       {Object.keys(item)}
     </option>
   ));
 
   return (
     <div className="weather">
-      <select onChange={(e) => setOptionVal(e.target.value)}>{options}</select>
+      <select
+        onChange={(e) => setOptionVal(e.target.value)}
+        defaultValue={524894}
+      >
+        {options}
+      </select>
       <p>Температура: {weather.currWeather}</p>
       <p>Давление: {weather.pressure}</p>
       <p>Скорость ветра: {weather.wind}</p>
