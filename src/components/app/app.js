@@ -8,25 +8,27 @@ import "./app.css";
 import Header from "../header/header";
 import About from "../pages/about/about";
 import Home from "../pages/home/home";
-import { useState } from "react";
 
 const App = () => {
-  const blogs = [
+  const data = [
     {
+      id: 1,
       firstName: "Паша",
       lastName: "Большаков",
       age: 26,
       login: "Ramiten",
-      header: "Как я леща ловил",
+      header: "Как я карпа ловил",
     },
     {
+      id: 2,
       firstName: "Шикер",
       lastName: "Шикер",
       age: 26,
       login: "gapler",
-      header: "Как я карпа ловил",
+      header: "Как я леща ловил",
     },
     {
+      id: 3,
       firstName: "Гога",
       lastName: "Суворов",
       age: 26,
@@ -35,18 +37,16 @@ const App = () => {
     },
   ];
 
-  const [state, setState] = useState(blogs);
-
   return (
     <div className="app">
       <Router>
         <Header />
-        <Switch>
-          <div className="routes">
+        <div className="routes">
+          <Switch>
             <Route path="/about" exact render={About} />
-            <Route path="/" exact render={() => <Home blogs={blogs} />} />
-          </div>
-        </Switch>
+            <Route path="/" exact render={() => <Home data={data} />} />
+          </Switch>
+        </div>
       </Router>
     </div>
   );
