@@ -1,3 +1,4 @@
 .blog-item {
   display: flex;
+  cursor: pointer;
 }
