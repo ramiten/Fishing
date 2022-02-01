@@ -5,7 +5,12 @@ const BlogItem = (props) => {
   const { firstName, lastName, header, age } = props;
   return (
     <>
-      <div className="blog-item">
+      <div
+        className="blog-item"
+        onClick={() => {
+          console.log("qwe");
+        }}
+      >
         <div className="blog-img">
           <img alt="photo-blog" src={blogPhoto} />
         </div>
